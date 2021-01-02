@@ -1,0 +1,97 @@
+
+thead tr {
+    background-color: #e0e0e0;
+    color: inherit;
+}
+
+thead th {
+    vertical-align: bottom;
+    text-align: left;
+    white-space: normal;
+}
+
+thead td {
+}
+
+tbody tr {
+    vertical-align: top;
+}
+
+tbody th {
+    text-align: left;
+    background-color: #e8e8e8;
+    color: inherit;
+}
+
+tbody tr {
+    background-color: #f0f0f0;
+    color: inherit;
+}
+tbody tr.odd-row {
+    background-color: #f0f0ff;
+    color: inherit;
+}
+
+tbody td {
+}
+
+tbody tr:hover {
+    background-color: #f8f8f8;
+    border-color: black;
+}
+
+.multirow {
+    vertical-align: middle;
+}
+
+.FIPS199categorization
+{
+    font-weight: bold;
+}
+
+.revision {
+}
+
+.different {
+    background-color: cornsilk;
+}
+
+.label {
+}
+.select {
+}
+.label,
+.select {
+    /*font-variant: small-caps;*/
+    font-style: italic;
+    background-color: powderblue;
+    text-decoration: underline;
+}
+
+
+div > div.statement {
+    margin-left: 1em;
+}
+div > div.item {
+    margin-left: 1em;
+}
+div.item > div.item {
+    margin-left: 1em;
+}
+
+.anomaly {
+    font-style: italic;
+    background-color: yellow;
+}
+
+.withdrawn {
+    text-decoration: line-through;
+}
+.withdrawn2 {
+    color: grey;
+    text-decoration: line-through;
+}
+
+*[title] {
+    cursor: help;
+}
