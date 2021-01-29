@@ -65,7 +65,7 @@ tbody tr:hover {
     /*font-variant: small-caps;*/
     font-style: italic;
     background-color: powderblue;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
 }
 
 
@@ -94,4 +94,82 @@ div.item > div.item {
 
 *[title] {
     cursor: help;
+}
+
+details.ODPs {
+    display: inline-table;
+    vertical-align: text-top;
+}
+
+span.TBS {
+    font-variant: small-caps;
+    font-style: italic;
+    font-weight: bold;
+}
+
+span.match {
+    background-color: lightgreen;
+}
+span.nomatch {
+    background-color: lightyellow;
+}
+span.textmatch {
+    background-color: lightskyblue;
+}
+span.partialmatch {
+    background-color: lightyellow;
+}
+
+span.super-prm-id {
+    /*font-variant: small-caps;*/
+    vertical-align: super;
+    font-family: courier, fixed, monospace;
+    font-size: xx-small;
+}
+
+span.boolean {
+    font-variant: small-caps;
+    font-family: courier, fixed, monospace;
+
+}
+
+.novel {
+    background-color: orange;
+}
+
+.comparison {
+    text-align: right;
+}
+
+.param_id {
+    font-family: courier, fixed, monospace;
+    font-size: smaller;
+}
+
+.center {
+    text-align: center;
+}
+
+caption {
+    font-weight: bold;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    width: 50%;
+}
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+blockquote p {
+    display: inline;
 }
