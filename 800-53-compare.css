@@ -35,18 +35,38 @@ tbody tr.odd-row {
 tbody td {
 }
 
-tbody tr:hover {
+tr.prior-revision {
+    color: grey;
+}
+
+table.tr-hover tbody tr:hover {
     background-color: #f8f8f8;
     border-color: black;
+}
+
+
+tbody tr.prior-revision:hover {
+    color: inherit;
 }
 
 .multirow {
     vertical-align: middle;
 }
 
-.FIPS199categorization
+
+td.centered {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.LMHP
 {
-    font-weight: bold;
+    /*font-weight: bold;*/
+}
+
+.fr
+{
+    float: right;
 }
 
 .revision {
@@ -120,7 +140,7 @@ span.partialmatch {
     background-color: lightyellow;
 }
 
-span.super-prm-id {
+span.superscript-identifier {
     /*font-variant: small-caps;*/
     vertical-align: super;
     font-family: courier, fixed, monospace;
@@ -137,6 +157,13 @@ span.boolean {
     background-color: orange;
 }
 
+.novel-ODP {
+    text-decoration: underline;
+    text-decoration-color: orange;
+}
+.established-ODP {
+    text-decoration: none;
+}
 .comparison {
     text-align: right;
 }
@@ -172,4 +199,31 @@ blockquote:before {
 }
 blockquote p {
     display: inline;
+}
+
+div.comparison-example {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.semantic-error {
+    text-decoration: underline;
+    text-decoration-color: sandybrown;
+}
+.semantic-error::before {
+    background-color: sandybrown;
+    content: "faux pas ☛ ";
+}
+
+div.trailer > p {
+    font-size: xx-small;
+    max-width: 85ex;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: monospace;
+    color: #888;
+    background-color: inherit;
+    line-height: 120%
 }
