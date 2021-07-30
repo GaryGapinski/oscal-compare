@@ -820,7 +820,9 @@
    <param-map rev5-id="sa-4.2_prm_1" rev4-id="sa-4.2_prm_1"><!-- previously asserted id+text match --></param-map>
    <param-map rev5-id="sa-4.2_prm_2" rev4-id="sa-4.2_prm_2"><!-- previously asserted match??? --></param-map>
    <param-map rev5-id="sa-4.2_prm_3" rev4-id="sa-4.2_prm_3"><!-- previously asserted id+text match --></param-map>
-   <param-map rev5-id="sa-4.3_prm_1" novel="true"><!-- previously asserted --></param-map>
+   <param-map rev5-id="sa-4.3_prm_1" novel="true"/>
+   <param-map rev5-id="sa-4.3_prm_2" novel="true"/>
+   <param-map rev5-id="sa-4.3_prm_3" novel="true"/>
    <param-map rev5-id="sa-4.5_prm_1" rev4-id="sa-4.5_prm_1"><!-- previously asserted id+text match --></param-map>
    <param-map rev5-id="sa-4.11_prm_1" novel="true"><!-- no r4 --></param-map>
    <param-map rev5-id="sa-4.12_prm_1" novel="true"><!-- no r4 --></param-map>
@@ -965,6 +967,7 @@
    <param-map rev5-id="sc-8.5_prm_2" novel="true"><!-- no r4 --></param-map>
    <param-map rev5-id="sc-10_prm_1" rev4-id="sc-10_prm_1"><!-- previously asserted id+text match --></param-map>
    <param-map rev5-id="sc-11_prm_1" novel="true"><!-- previously asserted --></param-map>
+   <param-map rev5-id="sc-11_prm_2" novel="true"/>
    <param-map rev5-id="sc-11.1_prm_1" novel="true"><!-- no r4 params--></param-map>
    <param-map rev5-id="sc-12_prm_1" rev4-id="sc-12_prm_1"><!-- previously asserted id+text match --></param-map>
    <param-map rev5-id="sc-12.2_prm_1" rev4-id="sc-12.2_prm_1"><!-- previously asserted match??? --></param-map>
@@ -1194,7 +1197,8 @@
    <param-map rev5-id="si-14.3_prm_1" novel="true"><!-- no r4 --></param-map>
    <param-map rev5-id="si-15_prm_1" rev4-id="si-15_prm_1"><!-- previously asserted id+text match --></param-map>
    <param-map rev5-id="si-16_prm_1" rev4-id="si-16_prm_1"><!-- previously asserted match??? --></param-map>
-   <param-map rev5-id="si-17_prm_1" rev4-id="si-17_prm_1 si-17_prm_2" partial="merges split merges split"><!-- previously asserted partial --></param-map>
+   <param-map rev5-id="si-17_prm_1" rev4-id="si-17_prm_1 si-17_prm_2" partial="merges split merges split"
+      ><!-- previously asserted partial --></param-map>
    <param-map rev5-id="si-18_prm_1" novel="true"><!-- no r4 --></param-map>
    <param-map rev5-id="si-18.1_prm_1" novel="true"><!-- no r4 --></param-map>
    <param-map rev5-id="si-18.5_prm_1" novel="true"><!-- no r4 --></param-map>
