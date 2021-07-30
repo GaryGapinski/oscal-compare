@@ -145,6 +145,7 @@ span.superscript-identifier {
     vertical-align: super;
     font-family: courier, fixed, monospace;
     font-size: xx-small;
+    hyphens: none;
 }
 
 span.boolean {

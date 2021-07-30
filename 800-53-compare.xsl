@@ -28,6 +28,7 @@
     <xsl:variable name="SP800-53r4-high" as="document-node()" xpath-default-namespace=""
         select="doc(concat(/revs/rev4/@base, /revs/rev4/doc[@name = 'SP800-53r4-high']/@url))"/>
     <xsl:output method="html" version="5.0" include-content-type="false"/>
+    <xsl:output indent="false"/>
     <xsl:strip-space elements="*"/>
     <xsl:variable name="r4-bullet" as="xs:string">④</xsl:variable>
     <xsl:variable name="r5-bullet" as="xs:string">⑤</xsl:variable>
@@ -186,8 +187,9 @@
             select="$novel-controls[@id = ($SP800-53r5-low//import/include-controls/with-id, $SP800-53r5-moderate//import/include-controls/with-id, $SP800-53r5-high//import/include-controls/with-id, $SP800-53r5-privacy//import/include-controls/with-id)]"/>
         <xsl:variable name="novel-ODP-ids" as="xs:string*" select="$MAP54//*:param-map[@novel]/@rev5-id"/>
         <!--<xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html></xsl:text>-->
-        <html>
+        <html lang="en">
             <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
                 <title>
                     <xsl:value-of select="$document-title"/>
                 </title>
@@ -1394,7 +1396,7 @@
                 </colgroup>
                 <thead>
                     <tr>
-                        <th>Control</th>
+                        <th style="text-align:center;">Control</th>
                         <th style="text-align:center;">SP 800-53r5</th>
                         <th style="text-align:center;">SP 800-53r4</th>
                     </tr>
@@ -1412,7 +1414,7 @@
                                 <xsl:if test="fn:withdrawn(.) and fn:withdrawn($r4)">
                                     <xsl:attribute name="class">withdrawn2</xsl:attribute>
                                 </xsl:if>
-                                <td>
+                                <td class="center">
                                     <xsl:if test="$show-guidance">
                                         <xsl:attribute name="rowspan">2</xsl:attribute>
                                     </xsl:if>
