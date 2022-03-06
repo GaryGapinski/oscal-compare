@@ -231,39 +231,9 @@
                                 Language</a></cite> for information about OSCAL.</p>
                     <div>
                         <h3>SP 800-53r5 Adoption</h3>
-                        <!-- From https://www.w3schools.com/howto/howto_js_countdown.asp -->
-                        <script>// Set the date we 're counting down to
-                            var countDownDate = new Date("Sep 23, 2021 12:00:00").getTime();
-                            
-                            // Update the count down every 1 second
-                            var x = setInterval(function () {
-                            
-                            // Get today's date and time
-                            var now = new Date().getTime();
-                            
-                            // Find the distance between now and the count down date
-                            var distance = countDownDate - now;
-                            
-                            // Time calculations for days, hours, minutes and seconds
-                            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                            
-                            // Output the result in an element with id="countdown"
-                            document.getElementById("countdown").innerHTML = days + " days, " + hours + "h " + minutes + "m " + seconds + "s";
-                            
-                            // If the count down is over, write some text
-                            if (distance &lt; 0) {
-                            clearInterval(x);
-                            document.getElementById("countdown").innerHTML = "NONE";
-                            }
-                            },
-                            1000);
-                        </script>
-                        <p>The deadline for complete SP 800-53r5 adoption by US Federal Government agencies is September 23, 2021 — one year after its
-                            publication. Time remaining: <span id="countdown"/>.</p>
-                        <p> Office of Management and Budget Circular A-130 <cite><a target="_blank"
+                        <p>The deadline for complete SP 800-53r5 adoption by US Federal Government agencies was September 23, 2021 — one year after its
+                            publication.</p>
+                        <p>Office of Management and Budget Circular A-130 <cite><a target="_blank"
                                     href="https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/circulars/A130/a130revised.pdf">Managing
                                     Information as a Strategic Resource</a></cite>, July 2016 Appendix I §5 part a "NIST Standards and Guidelines" ¶3
                             (page I-16, PDF page 53) specifies</p>
