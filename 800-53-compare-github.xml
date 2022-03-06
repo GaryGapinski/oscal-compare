@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <revs>
-    <rev5 base="https://raw.githubusercontent.com/usnistgov/oscal-content/master/nist.gov/SP800-53/rev5/xml/">
+    <rev5 base="https://raw.githubusercontent.com/usnistgov/oscal-content/v1.0.0/nist.gov/SP800-53/rev5/xml/">
+        <!-- https://raw.githubusercontent.com/usnistgov/oscal-content/master/nist.gov/SP800-53/rev5/xml/NIST_SP-800-53_rev5_catalog.xml -->
         <doc name="SP800-53r5" url="NIST_SP-800-53_rev5_catalog.xml"/>
         <doc name="SP800-53r5-low" url="NIST_SP-800-53_rev5_LOW-baseline_profile.xml"/>
         <doc name="SP800-53r5-moderate" url="NIST_SP-800-53_rev5_MODERATE-baseline_profile.xml"/>
         <doc name="SP800-53r5-high" url="NIST_SP-800-53_rev5_HIGH-baseline_profile.xml"/>
         <doc name="SP800-53r5-privacy" url="NIST_SP-800-53_rev5_PRIVACY-baseline_profile.xml"/>
     </rev5>
-    <rev4 base="https://raw.githubusercontent.com/usnistgov/oscal-content/master/nist.gov/SP800-53/rev4/xml/">
+    <rev4 base="https://raw.githubusercontent.com/usnistgov/oscal-content/v1.0.0/nist.gov/SP800-53/rev4/xml/">
         <doc name="SP800-53r4" url="NIST_SP-800-53_rev4_catalog.xml"/>
         <doc name="SP800-53r4-low" url="NIST_SP-800-53_rev4_LOW-baseline_profile.xml"/>
         <doc name="SP800-53r4-moderate" url="NIST_SP-800-53_rev4_MODERATE-baseline_profile.xml"/>
