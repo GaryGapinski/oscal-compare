@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs oscal fn"
     version="3.0" xmlns:fn="local function" xmlns:oscal="http://csrc.nist.gov/ns/oscal/1.0"
-    xpath-default-namespace="http://csrc.nist.gov/ns/oscal/1.0">
+    xpath-default-namespace="http://csrc.nist.gov/ns/oscal/1.0" expand-text="true">
     <xsl:param name="show-all-withdrawn" as="xs:boolean" required="false" select="true()"/>
     <xsl:param name="show-ODP-id" as="xs:boolean" required="false" select="true()"/>
     <xsl:param name="compare-ODP" as="xs:boolean" required="false" select="false()"/>
@@ -202,9 +202,9 @@
                         <xsl:value-of select="$document-title"/>
                     </h1>
                     <p>
-                        <xsl:text expand-text="true">Last updated { format-dateTime(current-dateTime(), '[MNn] [D] [Y] [H01]:[m01] [ZN,*-3]') }.</xsl:text>
+                        <xsl:text>Last updated { format-dateTime(current-dateTime(), '[MNn] [D] [Y] [H01]:[m01] [ZN,*-3]') }.</xsl:text>
                     </p>
-                    <xsl:variable name="href" as="xs:string" expand-text="true"
+                    <xsl:variable name="href" as="xs:string"
                         >mailto:gary@garygapinski.com?subject={encode-for-uri($document-title)}%20({format-dateTime($UTC-datetime,'v[Y][M01][D01]T[H01][m01][s01]Z')})</xsl:variable>
                     <p>The <a target="_blank" title="Gary Gapinski" href="{$href}">author</a> welcomes comments and suggestions regarding document
                         content and format.</p>
@@ -260,7 +260,7 @@
                         <div>
                             <p>Large numbers of <a href="#novel-controls">controls</a> and <a href="#novel-ODPs">ODPs</a> were introduced, and
                                 pre-existing controls were augmented with novel ODPs.
-                                <xsl:text expand-text="true">The PT ({count($SP800-53r5//group[@id='pt']//control)} controls) and SR ({count($SP800-53r5//group[@id='sr']//control)} controls) families are entirely new.</xsl:text></p>
+                                <xsl:text>The PT ({count($SP800-53r5//group[@id='pt']//control)} controls) and SR ({count($SP800-53r5//group[@id='sr']//control)} controls) families are entirely new.</xsl:text></p>
                             <p>Virtually all pre-existing controls had syntactic changes and many had substantial semantic changes which will require
                                 manual review in order to assess the consequences of the changes.</p>
                         </div>
@@ -324,26 +324,26 @@
                     <h2 id="numbers">SP 800-53r5 Controls and ODPs</h2>
                     <h3>All controls</h3>
                     <p>
-                        <xsl:text expand-text="true">There are {format-integer(count($SP800-53r5//control) - count($SP800-53r5//control[fn:withdrawn(.)]),'#,##0')} active (i.e., not withdrawn) controls (there were {format-integer(count($SP800-53r5//control[fn:withdrawn(.)]) - count($SP800-53r4//control[fn:withdrawn(.)]),'#,##0')} newly withdrawn in SP 800-53r5, and {format-integer(count($SP800-53r4//control[fn:withdrawn(.)]),'#,##0')} previously withdrawn in earlier versions).</xsl:text>
+                        <xsl:text>There are {format-integer(count($SP800-53r5//control) - count($SP800-53r5//control[fn:withdrawn(.)]),'#,##0')} active (i.e., not withdrawn) controls (there were {format-integer(count($SP800-53r5//control[fn:withdrawn(.)]) - count($SP800-53r4//control[fn:withdrawn(.)]),'#,##0')} newly withdrawn in SP 800-53r5, and {format-integer(count($SP800-53r4//control[fn:withdrawn(.)]),'#,##0')} previously withdrawn in earlier versions).</xsl:text>
                     </p>
                     <p>
-                        <xsl:text expand-text="true">There are {format-integer(count($SP800-53r5//param),'#,##0')} organization-defined parameters (ODPs).</xsl:text>
+                        <xsl:text>There are {format-integer(count($SP800-53r5//param),'#,##0')} organization-defined parameters (ODPs).</xsl:text>
                     </p>
                     <ul>
                         <li>
-                            <xsl:text expand-text="true">There are {format-integer(count($SP800-53r5//control[@id = $SP800-53r5-low//import/include-controls/with-id]/param),'#,##0')} ODPs cited in controls selected in the SP 800-53B Low security control baseline.</xsl:text>
+                            <xsl:text>There are {format-integer(count($SP800-53r5//control[@id = $SP800-53r5-low//import/include-controls/with-id]/param),'#,##0')} ODPs cited in controls selected in the SP 800-53B Low security control baseline.</xsl:text>
                         </li>
                         <li>
-                            <xsl:text expand-text="true">There are {format-integer(count($SP800-53r5//control[@id = $SP800-53r5-moderate//import/include-controls/with-id]/param),'#,##0')} ODPs cited in controls selected in the SP 800-53B Moderate security control baseline.</xsl:text>
+                            <xsl:text>There are {format-integer(count($SP800-53r5//control[@id = $SP800-53r5-moderate//import/include-controls/with-id]/param),'#,##0')} ODPs cited in controls selected in the SP 800-53B Moderate security control baseline.</xsl:text>
                         </li>
                         <li>
-                            <xsl:text expand-text="true">There are {format-integer(count($SP800-53r5//control[@id = $SP800-53r5-high//import/include-controls/with-id]/param),'#,##0')} ODPs cited in controls selected in the SP 800-53B High security control baseline.</xsl:text>
+                            <xsl:text>There are {format-integer(count($SP800-53r5//control[@id = $SP800-53r5-high//import/include-controls/with-id]/param),'#,##0')} ODPs cited in controls selected in the SP 800-53B High security control baseline.</xsl:text>
                         </li>
                         <li>
-                            <xsl:text expand-text="true">There are {format-integer(count($SP800-53r5//control[@id = $SP800-53r5-privacy//import/include-controls/with-id]/param),'#,##0')} ODPs cited in controls selected in the SP 800-53B Privacy control baseline.</xsl:text>
+                            <xsl:text>There are {format-integer(count($SP800-53r5//control[@id = $SP800-53r5-privacy//import/include-controls/with-id]/param),'#,##0')} ODPs cited in controls selected in the SP 800-53B Privacy control baseline.</xsl:text>
                         </li>
                         <li>
-                            <xsl:text expand-text="true">There are {format-integer(count($SP800-53r5//control[not(@id = ($SP800-53r5-low//import/include-controls/with-id,$SP800-53r5-moderate//import/include-controls/with-id,$SP800-53r5-high//import/include-controls/with-id,$SP800-53r5-privacy//import/include-controls/with-id))]/param),'#,##0')} ODPs which occur in controls not selected in any SP 800-53B baseline.</xsl:text>
+                            <xsl:text>There are {format-integer(count($SP800-53r5//control[not(@id = ($SP800-53r5-low//import/include-controls/with-id,$SP800-53r5-moderate//import/include-controls/with-id,$SP800-53r5-high//import/include-controls/with-id,$SP800-53r5-privacy//import/include-controls/with-id))]/param),'#,##0')} ODPs which occur in controls not selected in any SP 800-53B baseline.</xsl:text>
                         </li>
                     </ul>
                     <div>
@@ -358,7 +358,7 @@
                             <xsl:text> organization-defined parameters.</xsl:text>
                         </p>
                         <p>
-                            <xsl:text expand-text="true">SP 800-53r5 has {count($novel-controls)} novel (i.e.,  not in SP 800-53r4) controls.</xsl:text>
+                            <xsl:text>SP 800-53r5 has {count($novel-controls)} novel (i.e.,  not in SP 800-53r4) controls.</xsl:text>
                             <xsl:text> </xsl:text>
                             <xsl:value-of select="count($novel-and-baselined-controls)"/>
                             <xsl:text> of those are selected in one or more SP 800-53B baselines, and collectively incorporate </xsl:text>
@@ -367,7 +367,7 @@
                         </p>
                         <ul>
                             <li>
-                                <xsl:text expand-text="true">SP 800-53r5 has {format-integer(count($novel-controls[@id = $SP800-53r5-low//import/include-controls/with-id]),'#,##0')} novel controls selected in the SP 800-53B Low security control baseline.</xsl:text>
+                                <xsl:text>SP 800-53r5 has {format-integer(count($novel-controls[@id = $SP800-53r5-low//import/include-controls/with-id]),'#,##0')} novel controls selected in the SP 800-53B Low security control baseline.</xsl:text>
                                 <!--<div>
                                 <xsl:for-each select="$novel-controls[@id = $SP800-53r5-low//import/include-controls/with-id]">
                                     <xsl:if test="position() != 1">
@@ -380,7 +380,7 @@
                             </div>-->
                             </li>
                             <li>
-                                <xsl:text expand-text="true">SP 800-53r5 has {format-integer(count($novel-controls[@id = $SP800-53r5-moderate//import/include-controls/with-id]),'#,##0')} novel controls selected in the SP 800-53B Moderate security control baseline.</xsl:text>
+                                <xsl:text>SP 800-53r5 has {format-integer(count($novel-controls[@id = $SP800-53r5-moderate//import/include-controls/with-id]),'#,##0')} novel controls selected in the SP 800-53B Moderate security control baseline.</xsl:text>
                                 <!--<div>
                                 <xsl:for-each select="$novel-controls[@id = $SP800-53r5-moderate//import/include-controls/with-id]">
                                     <xsl:if test="position() != 1">
@@ -393,7 +393,7 @@
                             </div>-->
                             </li>
                             <li>
-                                <xsl:text expand-text="true">SP 800-53r5 has {format-integer(count($novel-controls[@id = $SP800-53r5-high//import/include-controls/with-id]),'#,##0')} novel controls selected in the SP 800-53B High security control baseline.</xsl:text>
+                                <xsl:text>SP 800-53r5 has {format-integer(count($novel-controls[@id = $SP800-53r5-high//import/include-controls/with-id]),'#,##0')} novel controls selected in the SP 800-53B High security control baseline.</xsl:text>
                                 <!--<div>
                                 <xsl:for-each select="$novel-controls[@id = $SP800-53r5-high//import/include-controls/with-id]">
                                     <xsl:if test="position() != 1">
@@ -406,7 +406,7 @@
                             </div>-->
                             </li>
                             <li>
-                                <xsl:text expand-text="true">SP 800-53r5 has {format-integer(count($novel-controls[@id = $SP800-53r5-privacy//import/include-controls/with-id]),'#,##0')} novel controls selected in the SP 800-53B Privacy control baseline.</xsl:text>
+                                <xsl:text>SP 800-53r5 has {format-integer(count($novel-controls[@id = $SP800-53r5-privacy//import/include-controls/with-id]),'#,##0')} novel controls selected in the SP 800-53B Privacy control baseline.</xsl:text>
                                 <!--<div>
                                 <xsl:for-each select="$novel-controls[@id = $SP800-53r5-privacy//import/include-controls/with-id]">
                                     <xsl:if test="position() != 1">
@@ -419,7 +419,7 @@
                             </div>-->
                             </li>
                             <li>
-                                <xsl:text expand-text="true">SP 800-53r5 has {format-integer(count($novel-controls[not(@id = ($SP800-53r5-low//import/include-controls/with-id,$SP800-53r5-moderate//import/include-controls/with-id,$SP800-53r5-high//import/include-controls/with-id,$SP800-53r5-privacy//import/include-controls/with-id))]),'#,##0')} novel controls not selected in any SP 800-53B baseline.</xsl:text>
+                                <xsl:text>SP 800-53r5 has {format-integer(count($novel-controls[not(@id = ($SP800-53r5-low//import/include-controls/with-id,$SP800-53r5-moderate//import/include-controls/with-id,$SP800-53r5-high//import/include-controls/with-id,$SP800-53r5-privacy//import/include-controls/with-id))]),'#,##0')} novel controls not selected in any SP 800-53B baseline.</xsl:text>
                                 <!--<div>
                                 <xsl:for-each
                                     select="$novel-controls[not(@id = ($SP800-53r5-low//import/include-controls/with-id, $SP800-53r5-moderate//import/include-controls/with-id, $SP800-53r5-high//import/include-controls/with-id, $SP800-53r5-privacy//import/include-controls/with-id))]">
@@ -768,10 +768,10 @@
                                     </cite>
                                 </div>
                                 <div>
-                                    <xsl:text expand-text="true">Last modified: {.//metadata/last-modified} </xsl:text>
+                                    <xsl:text>Last modified: {.//metadata/last-modified} </xsl:text>
                                 </div>
                                 <div>
-                                    <xsl:text expand-text="true">OSCAL version: {.//metadata/oscal-version}</xsl:text>
+                                    <xsl:text>OSCAL version: {.//metadata/oscal-version}</xsl:text>
                                 </div>
                             </li>
                         </xsl:for-each>
@@ -1010,7 +1010,7 @@
                                             <xsl:variable name="r5-control" as="element()" select="current()"/>
                                             <xsl:variable name="r4-control" as="element()*" select="$SP800-53r4//control[@id = current()/@id]"/>
                                             <!--<xsl:if test="$r4-control/param and count(param) != count($r4-control/param)">
-                                                    <xsl:text expand-text="true">There are {count(param)} {$r5-bullet} ODPs and {count($r4-control/param)} {$r4-bullet} ODPs</xsl:text>
+                                                    <xsl:text>There are {count(param)} {$r5-bullet} ODPs and {count($r4-control/param)} {$r4-bullet} ODPs</xsl:text>
                                                 </xsl:if>-->
                                             <xsl:for-each select="param">
                                                 <xsl:variable name="text" as="xs:string" select="fn:parameter-text(.)"/>
@@ -1024,7 +1024,7 @@
                                                                 <span class="param_id">
                                                                     <xsl:value-of select="@id"/>
                                                                 </span>
-                                                                <xsl:text expand-text="true"> is a novel ODP (new in {$r5-bullet})</xsl:text>
+                                                                <xsl:text> is a novel ODP (new in {$r5-bullet})</xsl:text>
                                                             </span>
                                                         </xsl:when>
                                                         <xsl:when test="not($r4-control/param)">
@@ -1034,7 +1034,7 @@
                                                                 <span class="param_id">
                                                                     <xsl:value-of select="@id"/>
                                                                 </span>
-                                                                <xsl:text expand-text="true"> is a novel ODP (no {$r4-bullet} ODPs)</xsl:text>
+                                                                <xsl:text> is a novel ODP (no {$r4-bullet} ODPs)</xsl:text>
                                                             </span>
                                                         </xsl:when>
                                                         <xsl:when test="$MAP54//*:param-map[@rev5-id = current()/@id]/@novel">
@@ -1044,7 +1044,7 @@
                                                                 <span class="param_id">
                                                                     <xsl:value-of select="@id"/>
                                                                 </span>
-                                                                <xsl:text expand-text="true"> is a novel ODP (new in {$r5-bullet})</xsl:text>
+                                                                <xsl:text> is a novel ODP (new in {$r5-bullet})</xsl:text>
                                                             </span>
                                                         </xsl:when>
                                                         <xsl:when test="$MAP54//*:param-map[@rev5-id = current()/@id]/@partial">
@@ -1059,7 +1059,7 @@
                                                                 <span class="param_id">
                                                                     <xsl:value-of select="$MAP54//*:param-map[@rev5-id = current()/@id]/@rev4-id"/>
                                                                 </span>
-                                                                <xsl:text expand-text="true"> — {$MAP54//*:param-map[@rev5-id = current()/@id]/@partial}</xsl:text>
+                                                                <xsl:text> — {$MAP54//*:param-map[@rev5-id = current()/@id]/@partial}</xsl:text>
                                                             </span>
                                                         </xsl:when>
                                                         <xsl:when test="$MAP54//*:param-map[@rev5-id = current()/@id]">
@@ -1132,7 +1132,7 @@
                                             <xsl:variable name="r5-control" as="element()" select="current()"/>
                                             <xsl:variable name="r4-control" as="element()*" select="$SP800-53r4//control[@id = current()/@id]"/>
                                             <!--<xsl:if test="$r4-control/param and count(param) != count($r4-control/param)">
-                                                    <xsl:text expand-text="true">There are {count(param)} {$r5-bullet} ODPs and {count($r4-control/param)} {$r4-bullet} ODPs</xsl:text>
+                                                    <xsl:text>There are {count(param)} {$r5-bullet} ODPs and {count($r4-control/param)} {$r4-bullet} ODPs</xsl:text>
                                                 </xsl:if>-->
                                             <xsl:for-each select="param">
                                                 <xsl:variable name="text" as="xs:string" select="fn:parameter-text(.)"/>
@@ -1146,7 +1146,7 @@
                                                                 <span class="param_id">
                                                                     <xsl:value-of select="@id"/>
                                                                 </span>
-                                                                <xsl:text expand-text="true"> is new in {$r5-bullet}</xsl:text>
+                                                                <xsl:text> is new in {$r5-bullet}</xsl:text>
                                                             </span>
                                                         </xsl:when>
                                                         <xsl:when test="$MAP54//*:param-map[@rev5-id = current()/@id]/@partial">
@@ -1161,7 +1161,7 @@
                                                                 <span class="param_id">
                                                                     <xsl:value-of select="$MAP54//*:param-map[@rev5-id = current()/@id]/@rev4-id"/>
                                                                 </span>
-                                                                <xsl:text expand-text="true"> — {$MAP54//*:param-map[@rev5-id = current()/@id]/@partial}</xsl:text>
+                                                                <xsl:text> — {$MAP54//*:param-map[@rev5-id = current()/@id]/@partial}</xsl:text>
                                                             </span>
                                                         </xsl:when>
                                                         <xsl:when test="$MAP54//*:param-map[@rev5-id = current()/@id]">
@@ -1448,7 +1448,7 @@
                                             <xsl:variable name="r5-control" as="element()" select="current()"/>
                                             <xsl:variable name="r4-control" as="element()*" select="$SP800-53r4//control[@id = current()/@id]"/>
                                             <!--<xsl:if test="$r4-control/param and count(param) != count($r4-control/param)">
-                                                    <xsl:text expand-text="true">There are {count(param)} {$r5-bullet} ODPs and {count($r4-control/param)} {$r4-bullet} ODPs</xsl:text>
+                                                    <xsl:text>There are {count(param)} {$r5-bullet} ODPs and {count($r4-control/param)} {$r4-bullet} ODPs</xsl:text>
                                                 </xsl:if>-->
                                             <xsl:for-each select="param">
                                                 <xsl:variable name="text" as="xs:string" select="fn:parameter-text(.)"/>
@@ -1462,7 +1462,7 @@
                                                                 <span class="param_id">
                                                                     <xsl:value-of select="@id"/>
                                                                 </span>
-                                                                <xsl:text expand-text="true"> is a novel ODP (new in {$r5-bullet})</xsl:text>
+                                                                <xsl:text> is a novel ODP (new in {$r5-bullet})</xsl:text>
                                                             </span>
                                                         </xsl:when>
                                                         <xsl:when test="not($r4-control/param)">
@@ -1472,7 +1472,7 @@
                                                                 <span class="param_id">
                                                                     <xsl:value-of select="@id"/>
                                                                 </span>
-                                                                <xsl:text expand-text="true"> is a novel ODP (no {$r4-bullet} ODPs)</xsl:text>
+                                                                <xsl:text> is a novel ODP (no {$r4-bullet} ODPs)</xsl:text>
                                                             </span>
                                                         </xsl:when>
                                                         <xsl:when test="$MAP54//*:param-map[@rev5-id = current()/@id]/@novel">
@@ -1482,7 +1482,7 @@
                                                                 <span class="param_id">
                                                                     <xsl:value-of select="@id"/>
                                                                 </span>
-                                                                <xsl:text expand-text="true"> is a novel ODP (new in {$r5-bullet})</xsl:text>
+                                                                <xsl:text> is a novel ODP (new in {$r5-bullet})</xsl:text>
                                                             </span>
                                                         </xsl:when>
                                                         <xsl:when test="$MAP54//*:param-map[@rev5-id = current()/@id]/@partial">
@@ -1497,7 +1497,7 @@
                                                                 <span class="param_id">
                                                                     <xsl:value-of select="$MAP54//*:param-map[@rev5-id = current()/@id]/@rev4-id"/>
                                                                 </span>
-                                                                <xsl:text expand-text="true"> — {$MAP54//*:param-map[@rev5-id = current()/@id]/@partial}</xsl:text>
+                                                                <xsl:text> — {$MAP54//*:param-map[@rev5-id = current()/@id]/@partial}</xsl:text>
                                                             </span>
                                                         </xsl:when>
                                                         <xsl:when test="$MAP54//*:param-map[@rev5-id = current()/@id]">
@@ -1570,7 +1570,7 @@
                                             <xsl:variable name="r5-control" as="element()" select="current()"/>
                                             <xsl:variable name="r4-control" as="element()*" select="$SP800-53r4//control[@id = current()/@id]"/>
                                             <!--<xsl:if test="$r4-control/param and count(param) != count($r4-control/param)">
-                                                    <xsl:text expand-text="true">There are {count(param)} {$r5-bullet} ODPs and {count($r4-control/param)} {$r4-bullet} ODPs</xsl:text>
+                                                    <xsl:text>There are {count(param)} {$r5-bullet} ODPs and {count($r4-control/param)} {$r4-bullet} ODPs</xsl:text>
                                                 </xsl:if>-->
                                             <xsl:for-each select="param">
                                                 <xsl:variable name="text" as="xs:string" select="fn:parameter-text(.)"/>
@@ -1584,7 +1584,7 @@
                                                                 <span class="param_id">
                                                                     <xsl:value-of select="@id"/>
                                                                 </span>
-                                                                <xsl:text expand-text="true"> is new in {$r5-bullet}</xsl:text>
+                                                                <xsl:text> is new in {$r5-bullet}</xsl:text>
                                                             </span>
                                                         </xsl:when>
                                                         <xsl:when test="$MAP54//*:param-map[@rev5-id = current()/@id]/@partial">
@@ -1599,7 +1599,7 @@
                                                                 <span class="param_id">
                                                                     <xsl:value-of select="$MAP54//*:param-map[@rev5-id = current()/@id]/@rev4-id"/>
                                                                 </span>
-                                                                <xsl:text expand-text="true"> — {$MAP54//*:param-map[@rev5-id = current()/@id]/@partial}</xsl:text>
+                                                                <xsl:text> — {$MAP54//*:param-map[@rev5-id = current()/@id]/@partial}</xsl:text>
                                                             </span>
                                                         </xsl:when>
                                                         <xsl:when test="$MAP54//*:param-map[@rev5-id = current()/@id]">
@@ -1780,7 +1780,7 @@
             <xsl:copy-of select="$bullet"/>
             <xsl:for-each select="link[@rel = ('incorporated-into')]">
                 <xsl:if test="position() = 1">
-                    <xsl:text expand-text="true">Withdrawn — {translate(@rel, '-', ' ')} </xsl:text>
+                    <xsl:text>Withdrawn — {translate(@rel, '-', ' ')} </xsl:text>
                 </xsl:if>
                 <xsl:if test="position() != 1">
                     <xsl:text>, </xsl:text>
@@ -1833,7 +1833,7 @@
     <xsl:template mode="statement" match="em | strong | ol | li | b">
         <xsl:element name="span">
             <xsl:attribute name="class">semantic-error</xsl:attribute>
-            <xsl:attribute name="title" expand-text="true">The input catalog contained a faux HTML &lt;{local-name()}&gt; element</xsl:attribute>
+            <xsl:attribute name="title">The input catalog contained a faux HTML &lt;{local-name()}&gt; element</xsl:attribute>
             <xsl:apply-templates mode="statement" select="node()"/>
         </xsl:element>
     </xsl:template>
@@ -1843,7 +1843,7 @@
         </a>
     </xsl:template>
     <xsl:template mode="statement" match="prop[@name = 'label']">
-        <xsl:text expand-text="true">{@value} </xsl:text>
+        <xsl:text>{@value} </xsl:text>
     </xsl:template>
     <xsl:template mode="statement" match="insert">
         <xsl:param name="tag-with-id" as="xs:boolean" tunnel="true" required="false" select="true()"/>
@@ -1883,26 +1883,26 @@
                                         <xsl:variable name="ODPs" as="xs:string*">
                                             <xsl:choose>
                                                 <xsl:when test="$ODP-low//set-parameter[@id-ref = current()/@id-ref]">
-                                                    <xsl:text expand-text="true">Ⓛ: {$ODP-low//set-parameter[@id-ref = current()/@id-ref]/value}</xsl:text>
+                                                    <xsl:text>Ⓛ: {$ODP-low//set-parameter[@id-ref = current()/@id-ref]/value}</xsl:text>
                                                 </xsl:when>
                                                 <xsl:otherwise>
-                                                    <xsl:text expand-text="true">Ⓛ: (Not defined)</xsl:text>
+                                                    <xsl:text>Ⓛ: (Not defined)</xsl:text>
                                                 </xsl:otherwise>
                                             </xsl:choose>
                                             <xsl:choose>
                                                 <xsl:when test="$ODP-moderate//set-parameter[@id-ref = current()/@id-ref]">
-                                                    <xsl:text expand-text="true">Ⓜ: {$ODP-moderate//set-parameter[@id-ref = current()/@id-ref]/value}</xsl:text>
+                                                    <xsl:text>Ⓜ: {$ODP-moderate//set-parameter[@id-ref = current()/@id-ref]/value}</xsl:text>
                                                 </xsl:when>
                                                 <xsl:otherwise>
-                                                    <xsl:text expand-text="true">Ⓜ: (Not defined)</xsl:text>
+                                                    <xsl:text>Ⓜ: (Not defined)</xsl:text>
                                                 </xsl:otherwise>
                                             </xsl:choose>
                                             <xsl:choose>
                                                 <xsl:when test="$ODP-high//set-parameter[@id-ref = current()/@id-ref]">
-                                                    <xsl:text expand-text="true">Ⓗ: {$ODP-high//set-parameter[@id-ref = current()/@id-ref]/value}</xsl:text>
+                                                    <xsl:text>Ⓗ: {$ODP-high//set-parameter[@id-ref = current()/@id-ref]/value}</xsl:text>
                                                 </xsl:when>
                                                 <xsl:otherwise>
-                                                    <xsl:text expand-text="true">Ⓗ: (Not defined)</xsl:text>
+                                                    <xsl:text>Ⓗ: (Not defined)</xsl:text>
                                                 </xsl:otherwise>
                                             </xsl:choose>
                                         </xsl:variable>
@@ -1987,7 +1987,7 @@
         <xsl:copy-of select="."/>
     </xsl:template>
     <xsl:template mode="statement" match="node()" priority="-9">
-        <xsl:message terminate="yes" expand-text="true">control: {ancestor::control/@id} id: {@id} name: {name()}</xsl:message>
+        <xsl:message terminate="yes">control: {ancestor::control/@id} id: {@id} name: {name()}</xsl:message>
     </xsl:template>
     <xsl:template match="node()" priority="-1">
         <xsl:apply-templates/>
