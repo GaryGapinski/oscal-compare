@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs oscal fn"
-    version="3.0" xmlns:fn="local function" xmlns:oscal="http://csrc.nist.gov/ns/oscal/1.0"
+    version="3.0" xmlns:fn="local-function" xmlns:oscal="http://csrc.nist.gov/ns/oscal/1.0"
     xpath-default-namespace="http://csrc.nist.gov/ns/oscal/1.0" expand-text="true">
     <xsl:param name="show-all-withdrawn" as="xs:boolean" required="false" select="true()"/>
     <xsl:param name="show-ODP-id" as="xs:boolean" required="false" select="true()"/>
